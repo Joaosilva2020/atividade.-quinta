@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    input {
+        font-size: 20px;
+        margin: 50px 30px;
+        border: 1px solid red;
+    }
+    #resultado {
+        font-size: 24px;
+        margin-top: 20px;
+    }
+</style>
+<body>
+    <h1>par ou impar</h1>
+    <input type="number" id="n1" placeholder="digite um numero">
+    <button onclick="verificar()">verificar</button>
+    <div id="resultado"></div>
+</body>
+    <script>
+        function verificar () {
+            let num1 = Number(document.getElementById('n1').value);
+          if (num1 % 2 ===0 ) {
+            document.getElementById('resultado').innerText = `o numero ${num1} é par`;
+            } else {
+            document.getElementById('resultado').innerText = `o numero ${num1} é impar`;
+          }
+        }
+    </script>
+</html>

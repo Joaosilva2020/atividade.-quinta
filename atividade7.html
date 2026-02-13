@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h2>digite 5 numeros</h2>
+    <input type="number" id="n1" placeholder="digite um numero" /><br /><br />
+    <input
+      type="number"
+      id="n2"
+      placeholder="digite o segundo numero"
+    /><br /><br />
+    <input
+      type="number"
+      id="n3"
+      placeholder="digite o terceiro numero"
+    /><br /><br />
+    <input type="number" id="n4" placeholder="digite o quarto numero" />
+    <br /><br />
+    <input
+      type="number"
+      id="n5"
+      placeholder="digite o quinto numero"
+    /><br /><br />
+    <button onclick="somar()">Somar</button>
+    <div id="resultado"></div>
+  </body>
+  <script>
+    function somar() {
+      let n1 = Number(document.getElementById("n1").value);
+      let n2 = Number(document.getElementById("n2").value);
+      let n3 = Number(document.getElementById("n3").value);
+      let n4 = Number(document.getElementById("n4").value);
+      let n5 = Number(document.getElementById("n5").value);
+
+      let resultado = n1 + n2 + n3 + n4 + n5;
+      let media = resultado / 5;
+
+      let maior = Math.max(n1, n2, n3, n4, n5);
+      let menor = Math.min(n1, n2, n3, n4, n5);
+
+      document.getElementById("resultado").innerHTML =
+        `A soma dos numeros é: ${resultado} <br> A media dos numeros é: ${media} <br> O maior numero é: ${maior} <br> O menor numero é: ${menor}`;
+    }
+  </script>
+</html>

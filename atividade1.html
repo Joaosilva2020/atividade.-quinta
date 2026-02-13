@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+  
+    <style>
+        body {
+            margin: 0 auto;
+            width: 50%;
+        }
+       #nome {
+            font-size: 30px;
+            border: none;
+            outline: none;
+        }
+
+        #nome::placeholder {
+            font-size: 30px;
+        }
+
+        #nomenov {
+            font-size: 24px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>ola digite seu nome abaixo</h1>
+
+    <input type="text" id="nome" placeholder="_____________________________">
+    <button onclick="nome1()">ENVIAR</button>
+
+    <div id="nomenov"></div>
+    
+</body>
+<script>
+    function nome1 () {
+        let nomedigitado = document.getElementById('nome').value;
+        document.getElementById('nomenov').innerText = "seja bem vindo "  + nomedigitado;
+    }
+</script>
+</html>

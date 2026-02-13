@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>vogais</h1>
+    <input type="text" id="frase" placeholder="digite uma frase">
+    <button onclick="contar()">Contar</button>
+    <div id="resultado"></div>
+</body>
+    <script>
+        function contar() {
+            let frase = document.getElementById('frase').value.toLowerCase();
+            let vogais = ['a', 'e', 'i', 'o', 'u'];
+            let contagem = { a: 0, e: 0, i: 0, o: 0, u: 0 };
+
+            for (let char of frase) {
+                if (vogais.includes(char)) {
+                    contagem[char]++;
+                }
+            }
+
+            let resultado = `A: ${contagem.a} <br> E: ${contagem.e} <br> I: ${contagem.i} <br> O: ${contagem.o} <br> U: ${contagem.u}`;
+            document.getElementById('resultado').innerHTML = resultado;
+        }
+    </script>
+</html>

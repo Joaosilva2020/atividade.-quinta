@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    input {
+        font-size: 20px;
+        margin: 50px 30px;
+        border: 1px solid red;
+    }
+</style>
+<body>
+
+    <input type="number" id="n1" placeholder="digite um numero"> + 
+      <input type="number" id="n2" placeholder="digite outro numero">  
+      <button onclick="somar()">=</button>
+    <div id="resultado"></div>
+</body>
+<script>
+    function somar() {
+    let num1 = Number(document.getElementById('n1').value);
+    let num2 = Number(document.getElementById('n2').value);
+
+    let total = num1 + num2;
+
+        document.getElementById('resultado').innerText = `O resultado de ${num1} +  ${num2} é = ${total}`;
+    } 
+</script>
+</html>

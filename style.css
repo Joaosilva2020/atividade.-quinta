@@ -1,0 +1,30 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+    text-align: center;
+}
+
+.container {
+    margin-top: 50px;
+}
+
+.botoes {
+    display: grid;
+    grid-template-columns: repeat(2, 220px);
+    gap: 15px;
+    justify-content: center;
+}
+
+a {
+    display: block;
+    padding: 12px;
+    background-color: #3498db;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: 0.3s;
+}
+
+a:hover {
+    background-color: #2980b9;
+}
