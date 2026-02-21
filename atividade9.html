@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>calculadora</title>
+    <style>
+      @keyframes h1 {
+        0% {
+          color: red;
+        }
+        50% {
+          color: blue;
+        }
+        100% {
+          color: green;
+        }
+      }
+
+      .h1 {
+        animation: h1 2s infinite alternate;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      .fundo {
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        background: rgb(24, 19, 19);
+      }
+
+      #resultado {
+        width: 260px;
+        height: 45px;
+        background-color: #fff9f9;
+        margin: 5px;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        padding: 10px;
+        overflow: hidden;
+        align-items: nowrap;
+        font-family: sans-serif;
+        font-size: 25px;
+        border: 5px solid rgb(223, 13, 13);
+      }
+
+      .botao {
+        width: 60px;
+        height: 60px;
+        font-size: 25px;
+        margin: 2px;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="fundo">
+      <h1 class="h1">calculadora</h1>
+      <p id="resultado"></p>
+      <table>
+        <tr>
+          <td><button class="botao">c</button></td>
+          <td><button class="botao"><</button></td>
+          <td><button class="botao">/</button></td>
+          <td><button class="botao">x</button></td>
+        </tr>
+        <tr>
+          <td><button class="botao">7</button></td>
+          <td><button class="botao">8</button></td>
+          <td><button class="botao">9</button></td>
+          <td><button class="botao">-</button></td>
+        </tr>
+        <tr>
+          <td><button class="botao">4</button></td>
+          <td><button class="botao">5</button></td>
+          <td><button class="botao">6</button></td>
+          <td><button class="botao">+</button></td>
+        </tr>
+        <tr>
+          <td><button class="botao">1</button></td>
+          <td><button class="botao">2</button></td>
+          <td><button class="botao">3</button></td>
+          <td><button class="botao">=</button></td>
+        </tr>
+        <tr>
+          <td><button class="botao">0</button></td>
+          <td><button class="botao">.</button></td>
+        </tr>
+      </table>
+    </div>
+  </body>
+  <script>
+    const botoes = document.querySelectorAll(".botao");
+    const resultado = document.getElementById("resultado");
+
+    botoes.forEach((botao) => {
+      botao.addEventListener("click", () => {
+        const valor = botao.textContent;
+
+        if (valor === "c") {
+          resultado.textContent = "";
+        } else if (valor === "<");
+        else if (valor === "=") {
+          try {
+            resultado.textContent = eval(resultado.textContent);
+          } catch (error) {
+            resultado.textContent = "Erro";
+          }
+        } else {
+          resultado.textContent += valor;
+        }
+      });
+    });
+  </script>
+</html>

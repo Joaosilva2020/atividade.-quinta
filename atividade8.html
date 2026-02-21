@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        margin: 0 auto;
+        width: 50%;
+      
+      }
+      header {
+        text-align: center;
+      }
+
+      .jg {
+        font-size: 35px;
+        height: 100px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      main {
+        border: 1px solid black;
+        margin: 0 auto;
+        height: 200px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        box-shadow: 15px 10px 100px rgb(1, 68, 255);
+      }
+      input {
+        width: 200px;
+        height: 30px;
+        font-size: 20px;
+        text-align: center;
+      }
+        button {
+        width: 100px;
+        height: 30px;
+        font-size: 20px;
+        margin-top: 20px;
+    }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>jogo do adivinha</h1>
+      <p>tente adivinhar o numero entre 1 e 100</p>
+    </header>
+
+    <main>
+      <span class="jg"><h3>escolha um de 1 a 100:</h3></span
+      ><input type="number" id="numero" />
+      <button id="enviar">enviar</button>
+    </main>
+    <h2 id="adivinha">?</h2>
+  </body>
+
+  <script>
+    const numerosorteado = 42;
+    const enviar = document.getElementById("enviar");
+    const numeroInput = document.getElementById("numero");
+    const adivinha = document.getElementById("adivinha");
+
+    enviar.addEventListener("click", function () {
+      const palpite = parseInt(numeroInput.value);
+      if (palpite === numerosorteado) {
+        
+        adivinha.innerText = "Parabéns! Você adivinhou o número!";
+      } else if (palpite < numerosorteado) {
+      
+        adivinha.innerText = "Tente um número maior!";
+      } else {
+   
+        adivinha.innerText = "Tente um número menor!";
+      }
+      numeroInput.value = "";
+    });
+
+
+  </script>
+</html>

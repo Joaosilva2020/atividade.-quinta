@@ -1,0 +1,30 @@
+{
+  "name": "10-atividades",
+  "version": "1.0.0",
+  "description": "",
+  "main": "monitor_ram.js",
+  "type": "commonjs",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tailwindcss -i ./src/input.css -o ./public/style.css --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Joaosilva2020/atividade-quinta-feira.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Joaosilva2020/atividade-quinta-feira/issues"
+  },
+  "homepage": "https://github.com/Joaosilva2020/atividade-quinta-feira#readme",
+  "dependencies": {
+    "express": "^5.2.1"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.24",
+    "postcss": "^8.5.6",
+    "tailwindcss": "^3.4.4"
+  }
+}

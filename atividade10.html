@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Lista de Tarefas Clássica</title>
+</head>
+
+<body>
+  <h1>Lista de Tarefas</h1>
+  <input type="text" id="tarefaInput" placeholder="Digite uma tarefa" />
+  <button id="btnAdicionar">Adicionar Tarefa</button>
+  <button id="btnListar">Listar Tarefas</button>
+
+  <h2>Tarefas Salvas:</h2>
+  <ul id="listaTarefas"></ul>
+
+  <script>
+    const input = document.getElementById("tarefaInput");
+    const btnAdicionar = document.getElementById("btnAdicionar");
+    const btnListar = document.getElementById("btnListar");
+    const listaUl = document.getElementById("listaTarefas");
+
+    btnAdicionar.onclick = function () {
+      var tarefa = input.value;
+      if (tarefa === "") return;
+
+      var tarefasAtuais = localStorage.getItem("meuArquivo_txt") || "";
+
+      var novasTarefas = tarefasAtuais + tarefa + "|";
+
+      localStorage.setItem("meuArquivo_txt", novasTarefas);
+
+      input.value = "";
+      alert("Tarefa salva!");
+    };
+
+    btnListar.onclick = function () {
+      listaUl.innerHTML = "";
+
+      var conteudo = localStorage.getItem("meuArquivo_txt") || "";
+
+      var linhas = conteudo.split("|");
+
+      for (var i = 0; i < linhas.length; i++) {
+        var texto = linhas[i];
+
+        if (texto.trim() !== "") {
+          var itemLista = document.createElement("li");
+          itemLista.textContent = i + 1 + ". " + texto;
+          listaUl.appendChild(itemLista);
+        }
+      }
+    };
+  </script>
+</body>
+
+</html>
